@@ -53,22 +53,19 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-bold font-[family-name:var(--font-playfair)] text-lg text-foreground mb-4">
-                Sophisticated Blog
+                MRESEOSA Blog
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Premium content for discerning readers who value quality insights and thoughtful perspectives.
+                I am documenting my journey as i start a web development journey and i share my insights along the way.
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://mreseosa.com" className="block text-muted-foreground hover:text-primary transition-colors">
                   Home
                 </Link>
-                <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
-                  About
-                </Link>
-                <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://wa.me/2349155276978" target="_blank" className="block text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </Link>
               </div>
@@ -76,7 +73,7 @@ export default async function Home() {
             <NewsletterForm />
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 Sophisticated Blog. All rights reserved.</p>
+            <p>&copy; 2024 MRESEOSA Blog. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -50,7 +50,7 @@ export function NewsletterForm() {
       <p className="text-muted-foreground mb-4">Subscribe to our newsletter for the latest updates.</p>
 
       <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row">
           <input
             type="email"
             value={email}
@@ -58,12 +58,12 @@ export function NewsletterForm() {
             placeholder="Enter your email"
             required
             disabled={status === "loading"}
-            className="flex-1 px-3 py-2 bg-background border border-border rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
+            className="flex-1 px-3 py-2 bg-background border border-border rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={status === "loading"}
-            className="px-4 py-2 bg-primary text-primary-foreground rounded-r-md hover:bg-primary/90 transition-colors disabled:opacity-50"
+            className="mt-2 sm:mt-0 px-4 py-2 bg-primary text-primary-foreground rounded-md sm:rounded-l-none sm:rounded-r-md hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
             {status === "loading" ? "Subscribing..." : "Subscribe"}
           </button>
