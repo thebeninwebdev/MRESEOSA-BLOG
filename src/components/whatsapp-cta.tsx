@@ -37,7 +37,7 @@ export default function WhatsAppCTA() {
               <Minimize2 className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-sm mb-4 text-white/90">Have a question or want to collaborate? Let's chat on WhatsApp!</p>
+          <p className="text-sm mb-4 text-white/90">Have a question or want to collaborate? Let&apos;s chat on WhatsApp!</p>
           <button
             onClick={handleClick}
             className="w-full bg-white text-green-500 font-semibold py-2 px-4 rounded-lg hover:bg-green-50 transition-colors text-sm"

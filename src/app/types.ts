@@ -1,10 +1,12 @@
+import { Document } from '@contentful/rich-text-types'
+
 export interface BlogPost {
   fields: {
     slug: string
     title: string
     date: string
     excerpt?: string
-    content?: any // Rich text content from Contentful
+    content?: Document // Rich text content from Contentful
     featuredImage?: {
       fields: {
         file: {
