@@ -6,17 +6,21 @@ import { BlogHero } from "@/components/blog-hero"
 import { BlogPostCard } from "@/components/blog-post-card"
 import { NewsletterForm } from "@/components/newsletter-form"
 
+export const revalidate = 0 
+
 const client = createClient({
   space: process.env.SPACE_ID!,
   accessToken: process.env.ACCESS_TOKEN!,
 })
 
 const getBlogEntries = async (): Promise<BlogQueryResult> => {
-  const entries = await client.getEntries({
-    content_type: "pageBlogPost",
-  })
+const entries = await client.getEntries(
+  { content_type: "pageBlogPost" }
+)
   return entries as unknown as BlogQueryResult
 }
+
+
 
 export default async function Home() {
   const blogEntries = await getBlogEntries()
