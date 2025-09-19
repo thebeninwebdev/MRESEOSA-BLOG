@@ -1,10 +1,13 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 
-export function NewsletterForm() {
+interface NewsletterFormProps {
+  onSuccess?: () => void
+}
+
+export function NewsletterForm({ onSuccess }: NewsletterFormProps) {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [message, setMessage] = useState("")
@@ -28,6 +31,8 @@ export function NewsletterForm() {
         setStatus("success")
         setMessage("Successfully subscribed! Check your email for confirmation.")
         setEmail("")
+        // Call onSuccess callback if provided (for popup)
+        onSuccess?.()
       } else {
         setStatus("error")
         setMessage(data.error || "Failed to subscribe. Please try again.")

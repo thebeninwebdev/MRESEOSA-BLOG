@@ -5,8 +5,9 @@ import { BlogHeader } from "@/components/blog-header"
 import { BlogHero } from "@/components/blog-hero"
 import { BlogPostCard } from "@/components/blog-post-card"
 import { NewsletterForm } from "@/components/newsletter-form"
+import { NewsletterPopup } from "@/components/newsletter-popup"
 
-export const revalidate = 0 
+export const revalidate = 0
 
 const client = createClient({
   space: process.env.SPACE_ID!,
@@ -14,13 +15,9 @@ const client = createClient({
 })
 
 const getBlogEntries = async (): Promise<BlogQueryResult> => {
-const entries = await client.getEntries(
-  { content_type: "pageBlogPost" }
-)
+  const entries = await client.getEntries({ content_type: "pageBlogPost" })
   return entries as unknown as BlogQueryResult
 }
-
-
 
 export default async function Home() {
   const blogEntries = await getBlogEntries()
@@ -66,10 +63,17 @@ export default async function Home() {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <Link href="https://mreseosa.com" className="block text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="https://mreseosa.com"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
-                <Link href="https://wa.me/2349155276978" target="_blank" className="block text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="https://wa.me/2349155276978"
+                  target="_blank"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contact
                 </Link>
               </div>
@@ -81,6 +85,8 @@ export default async function Home() {
           </div>
         </div>
       </footer>
+
+      <NewsletterPopup intervalMinutes={2} />
     </div>
   )
 }
